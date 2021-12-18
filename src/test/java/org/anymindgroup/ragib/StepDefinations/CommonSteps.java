@@ -1,4 +1,4 @@
-package com.anymindgroup.ragib.StepDefinations;
+package org.anymindgroup.ragib.StepDefinations;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
