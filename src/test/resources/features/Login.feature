@@ -8,5 +8,5 @@ Feature: User Login
     Then User logout from the system
     Examples:
       | username | password |
-      | naveenk  | test@123 |
+      | naveenk  | Test@1234 |
       |  tom     | test456  |
