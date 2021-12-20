@@ -8,6 +8,7 @@ public class TransactionPage {
     private By deposit = By.xpath("//a[1]");
     private By withdraw = By.xpath("//a[2]");
     private By logout = By.xpath("//button");
+    private By errorMSG = By.xpath("//span[7]");
 
 
     public TransactionPage(WebDriver driver) {
@@ -23,6 +24,9 @@ public class TransactionPage {
         return driver.getCurrentUrl();
     }
     public String getWithdrawPage() {
+        return driver.getCurrentUrl();
+    }
+    public String getURL(){
         return driver.getCurrentUrl();
     }
     public void logout(){
