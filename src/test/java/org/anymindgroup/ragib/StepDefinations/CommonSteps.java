@@ -44,7 +44,7 @@ public class CommonSteps {
             depositPage.clickDepositButton();
             user.setBalanceAfterTransaction(pageName);
         } else if (pageName.equals("withdraw")) {
-            loginPage.clickOnLogin();
+            withdrawPage.clickDepositButton();
             user.setBalanceAfterTransaction(pageName);
         }
     }
@@ -59,7 +59,7 @@ public class CommonSteps {
             System.out.println(title);
             title = transactionPage.getDepositPage();
             Assert.assertEquals(title, Constant.DEPOSIT_URL);
-        } else if (pageURL.equals("Withdraw")) {
+        } else if (pageURL.equals("withdraw")) {
             System.out.println(title);
             title = transactionPage.getWithdrawPage();
             Assert.assertEquals(title, Constant.WITHDRAQ_URL);
