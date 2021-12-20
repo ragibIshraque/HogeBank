@@ -4,15 +4,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.anymindgroup.ragib.factory.DriverFactory;
 import org.anymindgroup.ragib.model.User;
-import org.anymindgroup.ragib.pages.DepositPage;
-import org.anymindgroup.ragib.pages.LoginPage;
-import org.anymindgroup.ragib.pages.TransactionPage;
-import org.anymindgroup.ragib.pages.WithdrawPage;
+import org.anymindgroup.ragib.pages.*;
 import org.anymindgroup.ragib.util.Constant;
 import org.junit.Assert;
 
 public class CommonSteps {
     private User user =new User();
+    private String errorMessage;
     private String title;
     private String transactionFee;
     private String amountAfterFee;
@@ -22,6 +20,7 @@ public class CommonSteps {
     private TransactionPage transactionPage = new TransactionPage(DriverFactory.getDriver());
     private DepositPage depositPage = new DepositPage(DriverFactory.getDriver());
     private WithdrawPage withdrawPage = new WithdrawPage(DriverFactory.getDriver());
+    private Registration registration = new Registration(DriverFactory.getDriver());
 
     @Given("User is already on main Page")
     public void user_is_already_on_main_page() {
@@ -106,7 +105,36 @@ public class CommonSteps {
             System.out.println(Double.toString(user.getBalanceAfterTransaction()));
             Assert.assertEquals(Double.parseDouble(balance),user.getBalanceAfterTransaction(),0);
 
-        } else if (message.equals("error message")) {
+        } else if (message.equals("userNameBlank")) {
+            errorMessage = registration.getErrorMessage();
+            Assert.assertEquals(errorMessage, Constant.ERROR_MESSAGE_USER_BLANK);
+
+        }else if (message.equals("userNameWhiteSpace")) {
+            errorMessage = registration.getErrorMessage();
+            Assert.assertEquals(errorMessage, Constant.ERROR_MESSAGE_USER_WHITESPACE);
+
+        }else if (message.equals("passwordLess")) {
+            errorMessage = registration.getErrorMessage();
+            Assert.assertEquals(errorMessage, Constant.ERROR_MESSAGE_PASSWORD_LESS);
+
+        }else if (message.equals("passwordMore")) {
+            errorMessage = registration.getErrorMessage();
+            Assert.assertEquals(errorMessage, Constant.ERROR_MESSAGE_PASSWORD_MORE);
+
+        }else if (message.equals("passwordNumber")) {
+            errorMessage = registration.getErrorMessage();
+            Assert.assertEquals(errorMessage, Constant.ERROR_MESSAGE_PASSWORD_NUMBER);
+
+        }else if (message.equals("passwordUpperCase")) {
+            errorMessage = registration.getErrorMessage();
+            Assert.assertEquals(errorMessage, Constant.ERROR_MESSAGE_PASSWORD_UPPER_CASE);
+
+        }else if (message.equals("")) {
+            Thread.sleep(1000);
+            title = transactionPage.getURL();
+            System.out.printf(title);
+            System.out.println(Constant.PORTFOLIO_URL);
+            Assert.assertEquals(title, Constant.PORTFOLIO_URL);
 
         }
 
