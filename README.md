@@ -1,4 +1,14 @@
-How to run the framework
+**Introduction**
+-------
+Automation framework for regression testing of Hoge bank.
+
+**Requirements:**
+-------------
+- Java JDK_1.8
+- Maven version 3.6+
+
+
+**How to run the framework**
 -------------------
 1. Please make sure that JAVA_HOME and MAVEN_HOME path are set in environment variables 
 2. Add both paths in environment variable 'Path’.
