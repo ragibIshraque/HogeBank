@@ -17,3 +17,8 @@ Automation framework for regression testing of Hoge bank.
 5. If dependency is not resolved, reload the project from maven.(right click the project in project window > click Maven > reload project.
 6. After the dependency is resolved, Run the HogeBankTest.java  from src/test/java/Runner .
     1. HogeBankTest.java is the main runner file to run the whole framework.
+
+**Report**
+----------------
+1. Html report would be found inside **~test-output\SparkReport**
+2. Pdf report would be found inside **~test-output\PdfReport**
