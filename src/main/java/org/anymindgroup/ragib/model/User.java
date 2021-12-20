@@ -47,7 +47,7 @@ public class User {
         if (operation.equals("deposit")) {
             balanceAfterTransaction=initialBalance+amountAfterFee;
         } else if (operation.equals("withdraw")) {
-            balanceAfterTransaction=initialBalance-amountAfterFee-transactionFee;
+            balanceAfterTransaction=initialBalance-amountAfterFee;
         }
     }
 }
