@@ -1,7 +1,7 @@
 Feature: Transaction
 
   @RegressionTest @End2End
-  Scenario Outline: Deposit Scenario
+  Scenario Outline: Transaction Scenario
 
     Given User is already on main Page
     Then User clicks on "signup" button
