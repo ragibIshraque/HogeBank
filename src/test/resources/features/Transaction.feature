@@ -1,5 +1,6 @@
 Feature: Transaction
 
+  @RegressionTest @End2End
   Scenario Outline: Deposit Scenario
 
     Given User is already on main Page
@@ -16,6 +17,6 @@ Feature: Transaction
     And User checks "Balance"
     Then User logout from the system
     Examples:
-      | username | password  | amount |operation|
-      | naveenk  | Test@1234 |  1000  |deposit  |
-      | naveenk  | Test@1234 |  1000  |withdraw  |
+      | username | password  | amount | operation |
+      | naveenk  | Test@1234 | 1000   | deposit   |
+      | naveenk  | Test@1234 | 1000   | withdraw  |

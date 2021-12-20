@@ -1,5 +1,6 @@
 Feature: User SignUp
 
+  @RegressionTest @End2End
   Scenario Outline: New User Signup Scenario
     Given User is already on main Page
     Then User clicks on "signup" button

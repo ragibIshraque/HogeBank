@@ -27,7 +27,7 @@ public class User {
         return amountAfterFee;
     }
 
-    public void setAmountAfterFee(String  amountAfterFee) {
+    public void setAmountAfterFee(String amountAfterFee) {
         this.amountAfterFee = Double.parseDouble(amountAfterFee);
     }
 
@@ -45,9 +45,9 @@ public class User {
 
     public void setBalanceAfterTransaction(String operation) {
         if (operation.equals("deposit")) {
-            balanceAfterTransaction=initialBalance+amountAfterFee;
+            balanceAfterTransaction = initialBalance + amountAfterFee;
         } else if (operation.equals("withdraw")) {
-            balanceAfterTransaction=initialBalance-amountAfterFee;
+            balanceAfterTransaction = initialBalance - amountAfterFee;
         }
     }
 }
