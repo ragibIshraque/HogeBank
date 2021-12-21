@@ -56,15 +56,12 @@ public class CommonSteps {
             title = loginPage.getPortfolioPage();
             Assert.assertEquals(title, Constant.PORTFOLIO_URL);
         } else if (pageURL.equals("deposit")) {
-            System.out.println(title);
             title = transactionPage.getDepositPage();
             Assert.assertEquals(title, Constant.DEPOSIT_URL);
         } else if (pageURL.equals("withdraw")) {
-            System.out.println(title);
             title = transactionPage.getWithdrawPage();
             Assert.assertEquals(title, Constant.WITHDRAQ_URL);
         }
-        System.out.println(title);
     }
 
     @Then("User logout from the system")
@@ -85,7 +82,6 @@ public class CommonSteps {
     public void user_enters(String amount) {
         depositPage.enterAmountForDeposit(amount);
         user.setTransactionAmount(amount);
-        System.out.println(user.getTransactionAmount());
     }
 
     @Then("User checks {string}")
@@ -101,8 +97,6 @@ public class CommonSteps {
         } else if (message.equals("Balance")) {
             Thread.sleep(10000);
             balance= loginPage.getBalance();
-            System.out.println(balance);
-            System.out.println(Double.toString(user.getBalanceAfterTransaction()));
             Assert.assertEquals(Double.parseDouble(balance),user.getBalanceAfterTransaction(),0);
 
         } else if (message.equals("userNameBlank")) {
@@ -132,8 +126,6 @@ public class CommonSteps {
         }else if (message.equals("")) {
             Thread.sleep(1000);
             title = transactionPage.getURL();
-            System.out.printf(title);
-            System.out.println(Constant.PORTFOLIO_URL);
             Assert.assertEquals(title, Constant.PORTFOLIO_URL);
 
         }
